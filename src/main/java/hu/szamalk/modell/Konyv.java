@@ -1,39 +1,19 @@
 package hu.szamalk.modell;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.UUID;
 
 public class Konyv implements Serializable {
 
-    private String cim,szerzo;
+    private String cim;
+    private ArrayList<String> szerzok;
     private int kiadEv;
+    private transient UUID id;
 
-    public Konyv(String cim, String szerzo, int kiadEv) {
+    public Konyv(String cim, ArrayList<String> szerzok, int kiadEv) {
         this.cim = cim;
-        this.szerzo = szerzo;
-        this.kiadEv = kiadEv;
-    }
-
-    public String getCim() {
-        return cim;
-    }
-
-    public void setCim(String cim) {
-        this.cim = cim;
-    }
-
-    public String getSzerzo() {
-        return szerzo;
-    }
-
-    public void setSzerzo(String szerzo) {
-        this.szerzo = szerzo;
-    }
-
-    public int getKiadEv() {
-        return kiadEv;
-    }
-
-    public void setKiadEv(int kiadEv) {
+        this.szerzok = szerzok;
         this.kiadEv = kiadEv;
     }
 
@@ -41,7 +21,7 @@ public class Konyv implements Serializable {
     public String toString() {
         return "Konyv{" +
                 "cim='" + cim + '\'' +
-                ", szerzo='" + szerzo + '\'' +
+                ", szerzo='" + szerzok + '\'' +
                 ", kiadEv=" + kiadEv +
                 '}';
     }
